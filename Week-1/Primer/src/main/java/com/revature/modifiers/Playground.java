@@ -11,7 +11,7 @@ public class Playground {
         sally.shareSecretPassword();
         // the communityPassword can not be directly called here since it is protected
 //        sally.communityPassword();
-        sally.socialSecurityNumber;
+//        sally.socialSecurityNumber;
     }
 
 }

@@ -1,4 +1,4 @@
-package com.revature.jdk.classes;
+package com.revature.classes;
 
 public class Person {
 

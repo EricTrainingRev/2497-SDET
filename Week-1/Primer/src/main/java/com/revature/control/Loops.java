@@ -10,8 +10,10 @@ public class Loops {
 
     public static void main(String[] args) {
 //        forLoop(10);
-        String[] words = {"Hello", "world", "!"};
-        enhancedForLoop(words);
+//        String[] words = {"Hello", "world", "!"};
+//        enhancedForLoop(words);
+//        whileLoop(10);
+        doWhileLoop(10);
     }
 
     static void forLoop(int iterations){
@@ -49,6 +51,40 @@ public class Loops {
                 break;
             }
         }
+    }
+
+    /*
+        While loops are a better option for looping your code when you are unsure of how many iterations you need. Instead
+        of the formal standard for loop or the controled enhanced for loop, a while loop takes a logical statement and
+        continues to loop until that statement is false. No built-in controls: it is up to you the developer to implement
+        the ending of the loop. If you are not careful it is very easy to accidentally create an infinite loop: a loop
+        that has no exit condition and runs forever (at least until you manually kill it)
+     */
+
+    static void whileLoop(int iterations){
+        var keepIterating = true;
+        var count = 1;
+        while (keepIterating){
+            System.out.println(count);
+            count++;
+            if (count > iterations){
+                keepIterating = false;
+            }
+        }
+    }
+
+    static void doWhileLoop(int iterations){
+        // unlike all the other loops where the logic is checked and then the code is executed, in a do-while loop
+        // code is first executed, and then the logic is checked
+        var keepIterating = false;
+        var count = 0;
+        do {
+            System.out.println(count);
+            count++;
+            if(count > iterations){
+                keepIterating = false;
+            }
+        } while (keepIterating);
     }
 
 }

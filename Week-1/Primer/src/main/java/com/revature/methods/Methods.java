@@ -24,6 +24,17 @@ public class Methods {
         return numOne + numTwo;
     }
 
+    // if you are ever unsure of how many arguments will be provided to your method you can use a variable argument (var arg)
+    // to store however many arguments are provided to your method at runtime. They are saved in an array and then you can
+    // access them through the array. If you use a var arg it must be the last parameter declared
+    static int addAllTheNumbers(int... nums){
+        int sum = 0;
+        for(int num : nums){
+            sum += num;
+        }
+        return sum;
+    }
+
     // the main method is a regular method: you can call it just like any other. That being said, it is normal to have
     // Java run it for you. the "args" parameter in the main method holds any flags/command line arguments provided
     // to the app at runtime
@@ -35,6 +46,11 @@ public class Methods {
         // to call a method use the dot operator and reference the method you want to invoke
         obj.doSomething("Hello world!");
         int result = obj.doMath(5,6);
+
+        int sumOfAllNumbers = addAllTheNumbers(1,2,3,4,5);
+        System.out.println(sumOfAllNumbers);
+        int sumOfAllNumbers2 = addAllTheNumbers(6,7,8,9);
+        System.out.println(sumOfAllNumbers2);
 
     }
 

@@ -4,7 +4,23 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.revature</groupId>
+    <!--
+        Maven is a powerful open source build and dependency management tool for Java and Java-adjacent applications.
+        All your Maven activities are facilitated via the Project Object Model document (pom.xml). This is where Maven
+        gets instructions for things like what external libraries your application needs, what actions need to be performed
+        at each phase of the Maven Lifecycle, and instructions for how to actually build your application
+    -->
+
+    <!--
+        All Maven projects require a groupId, artifactId, and version. Together they make up the signature for your
+        application. This project signature would be org.revature:Primer:1.0-SNAPSHOT. This signature when uploaded
+        globally must be globally unique. Because of this the groupId is typically set as a reverse domain name for your
+        company/product. artifact Id is the identifier for the specific library of code your application is associated with,
+        and the version is simply the current iteration of the application. a SNAPSHOT version is an indicator that it
+        is a version that is currently in live development: this actually tells Maven to check for new versions of the
+        code instead of using cached version whenever it checks dependencies
+    -->
+    <groupId>com.revature</groupId>
     <artifactId>Primer</artifactId>
     <version>1.0-SNAPSHOT</version>
 
@@ -12,6 +28,28 @@
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!--
+            custom properties are useful so that you don't have to repeat values. This is particularly useful when you
+            need a bunch of dependencies that share their version information
+        -->
+        <custom-property>custom value</custom-property>
     </properties>
+
+    <dependencies>
+        <!-- Source: https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.48</version>
+            <scope>provided</scope>
+        </dependency>
+        <!-- Source: https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>6.1.3</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 
 </project>

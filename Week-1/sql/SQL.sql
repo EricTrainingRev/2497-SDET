@@ -240,7 +240,40 @@ grant select on products to customer;
 grant select on products, employees to administrator;
 
 
+-- as the customer I can query the products table, but not the employee table
+select * from products;
+-- only the administrator can query employee data
+select * from employees;
 
+-- if you want to remove a user/role you must first remove the permissions associated with
+-- resource you want deleted
+revoke select on products from customer;
+drop role customer;
+
+-- It is a bit of a mouthful to see the current permissions for a user
+SELECT grantee, privilege_type, table_schema, table_name
+FROM information_schema.role_table_grants
+WHERE grantee = 'administrator';
+
+/*
+	Transaction Control Language (TCL) is used to group actions into single units that
+	all succeed or fail together. 
+ */
+
+-- start or begin, depending on your database, is used to start a transaction
+start;
+begin;
+
+-- you can create save points in your transactions if you want to allow partial commits
+savepoint my_save_point;
+
+-- you can rollback to specific savepoints, or the entire transaction
+ROLLBACK;
+rollback to my-save_point;
+
+-- when you are done with the transaction use end or commit, depending on your database
+end;
+commit;
 
 
 

@@ -158,6 +158,88 @@ select name as player_name from players;
 -- multiple aliases can be set
 select name as player_name, home_town as city, team_id as employer from players;
 
+/*
+	One of the more powerful features of SQL is the ability to "join" records from multiple
+	tables. This is particularly useful when you need to view related data all organized
+	together is a cohesive and concise format. Joins typically happen on foreign/primary keys,
+	but this is not a requirement
+ */
+
+
+-- an inner join will return all records that have a match for your "on" clause
+select p.name as player_name, t.name as team from players p 
+join teams t on p.team_id = t.id order by t.id asc; 
+
+insert into teams (name, home_town) values ('Spurs', 'San Antonio');
+
+-- if you ever need ALL records from a table, whether or not there is a match based on your
+-- on clause, you can use a left or right join depending on which table you need all
+-- records from
+
+-- this will get all the teams records and matching player records. Spurs have no players
+-- so on the spurs row the player info will all be null
+select * from teams t left join players p on t.id = p.team_id;
+
+-- this will get all the players info and matching teams info. Because no players are matched
+-- with the Spurs the Spurs data will not be included
+select * from teams t right join players p on p.team_id = t.id;
+
+-- full join retrieves all records from both tables, if there are no matches for a record the
+-- associated columns are set to null
+select * from teams t full join players p on t.id = p.team_id;
+
+-- if you want to see all possible combinations (cartesian product) of your records you
+-- can use a cross join
+select p.name, t.name as team from players p 
+cross JOIN teams t;
+
+-- joins put data side by side in the same record; if you instead wanted to combine the data
+-- into the same column you could use a union instead
+select id from players
+union
+select name from teams;
+
+-- whenever you use aggregate functions there two more clauses you should be aware of:
+-- group by tells the database how to organize your aggregate function results
+-- having is your filter statement: it acts like the where clause, except it is specifically
+-- for filtering queries that used aggregate functions
+select count(p.id) as player_count, t.name as team from players p
+right join teams t on p.team_id = t.id
+group by team having player_count > 2 order by player_count;
+
+
+create table public."employees"(
+	id serial primary key,
+	name varchar(30)
+);
+
+insert into public.employees values (default, 'Billy'), (default, 'Sally');
+
+create table products(
+	id serial primary key,
+	name varchar(30)
+);
+
+insert into products (name) values ('keyboard'), ('mouse'), ('monitor');
+
+/*
+	Data Control Language (DCL) is used to control what kinds of users can perform what kinds
+	of actions in your database. Most databases will conflate the idea of users and roles. 
+	Postgres is one of those databases. 
+	
+	With our emplyees and products tables above, ideally customers would only be able to
+	see product information, database admins would be able to interact with both
+ */
+
+create user customer with password 'customer-password';
+create user administrator with password 'administrator-password';
+
+--once you have users you can grant and revoke capabilities. This have to be targeted, so you
+-- must specify what schemas, tables, etc. you are providing or removing capabilities for
+grant select on products to customer;
+grant select on products, employees to administrator;
+
+
 
 
 

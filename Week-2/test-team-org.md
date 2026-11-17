@@ -76,3 +76,40 @@ The defect life cycle is a way of organizing your approach to fixing defects dis
 7. Closure
     - close the defect, create a report on the work done
     - periodically aggregate your defect reports and inform stakeholders of the work that has been done
+
+## Testing Documentation
+There are some common documents used by testing teams to help facilitate, order, and keep track of work
+- Test Plan
+    - a strategic document for the whole testing lifecycle, it includes multiple important details for your testing work
+        - test objectives
+        - schedule
+        - estimates
+        - deliverables
+        - reference to other documents
+- Test Schedule
+    - timeline for your testing activities
+        - this can be a fine-grain schedule with individual test timelines
+        - high level overview of the testing timeline, more focused on sprint details than individual test details
+- Requirements Traceability Matrix
+    - This is a bidirectional map of requirements
+        - user stories/features should be mapped to requirements
+        - requirements should be mapped to test data
+        - test data should be mapped to test cases
+        - test cases should be mapped to defects
+    - RTMs are meant to be "living documents"
+        - as test basis/conditions change, your RTM should be updated to accommodate those changes
+            - this could mean adding on new requirements, test data, etc.
+            - this could mean removing old requirements, test data, etc.
+- Software Requirements Specification
+    - SRSs are detailed descriptions of the software being tested/built
+        - this is where the requirements for the application exist
+        - this is an invaluable tool for getting started with setting up a RTM: the user stories/feature and the requirements for those features can usually be mapped from this document
+- Test Progress Report
+    - a test progress report is any test report generated before the end of the test cycle
+        - reports on tests run
+            - \# passing tests
+            - \# failing tests
+            - \# skipped tests
+- Test Summary Report
+    - THE test report generated at the end of the test cycle
+    - this is the final report presented to stakeholders and archived for future reference

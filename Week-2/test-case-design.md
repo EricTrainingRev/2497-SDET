@@ -67,3 +67,44 @@ Once you have your test data that data must be organized. A simple way to organi
 |etc      | etc     | etc|
 
 The benefit of organizing your test data into one or more decision tables is it provides a quick snapshot of how many tests you are going to need to build, and a quick view of what the results of those tests should be. All rows with only positive data are going to be your happy path tests. Any row that has one more more invalid pieces of test data are going to be your sad path tests
+
+### State Transition Diagram
+Creating a State Transition Diagram is useful when your test involves moving a resource between pre-defined states; the diagram itself is a nice visual aid in helping you to determine what your test flows will look like. Below is an example state transition diagram for a theoretical reimbursement request:
+```mermaid
+stateDiagram-v2
+    [*] --> Pending: submitted
+    Pending --> Accepted: approved
+    Pending --> Rejected: rejected
+    Rejected --> Pending: resubmitted
+    Accepted
+```
+Once we have visualized our flows we can start crafting our test scenarios. A decision table is quite useful here
+|starting state| action | expected new state |
+|--------------|--------|--------------------|
+|not yet made | submit | pending|
+|pending      | approve| accepted|
+| rejected    | approve| remain in rejected state|
+| etc         | etc    | etc      |
+
+### Use Case Testing
+The other techniques we have looked at all help us to narrow data and/or create logical boundaries for the testing work we do. The user stories and requirements you work with will not always fit into neat little packages: sometimes your requirements will be broad, sometimes your user stories will be abstract, and you will have to make some assumptions with your testing. In these scenarios organizing your tests into "use cases" is a good approach. Use case testing is thinking of "real world scenarios" for your test object and then validating those scenarios happen as expected
+
+Consider you are testing a bank ATM and its software. The bank has simply told you "users should be able to withdraw their money and deposit cash into their account". With this broad user story we can organize our testing by creating "use cases"
+- main happy path: user accesses their account and deposits some money
+    - preconditions: user has an account, user has cash to deposit
+    - input: debit card attached to account, the cash to deposit
+    - action:
+        - user enters debit card into atm and provides pin
+        - user selects the deposit option
+        - user provides cash
+    - expected outcome
+        - money is deposited and card returned to the user
+
+If we had more requirements or any kind of information we could use the other testing techniques to better organize our test data, but when all else fails, you can always fall back on user experience with a product/service in order to consider "use cases" and build your test cases around those use cases
+
+## Exploratory Testing
+The types of test techniques and strategies we have looked at all have a general assumption that you have a decent amount of test basis to work off. This will not always be the case: sometimes you will have to create tests with very little to go off. In these cases you can use your experience as a user and tester to craft tests that you are confident will provide meaningful information when run.
+- In a black box scenario this is called "Error Guess Testing"
+- In a white box scenario this is called "Exploratory Testing"
+
+These are technical terms provided for a non-technical process: it's essentially making it up as you go, but ideally you use your personal experience and understanding of the software being tested to create the most beneficial tests you can think of

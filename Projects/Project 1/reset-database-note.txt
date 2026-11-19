@@ -1,0 +1,1 @@
+console command to reset planetarium application when it is running: curl -X POST http://localhost:8080/reset

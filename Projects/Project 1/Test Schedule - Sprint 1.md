@@ -27,6 +27,7 @@ This phase involves planning the testing activities. Previously determined test 
 - Jira Kanban Project created
 - Issues organized into epics, stories, and subtasks
 - Story points assigned to issues
+    - track these in your RTM
 
 ### Phase 3: Test Case Design
 Test cases are designed based on the test conditions determined in the previous phase. The team determines the necessary test data and creates feature files that outline the test scenarios and steps before implementing those steps with Selenium and JUnit

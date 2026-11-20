@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="0.587" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-11-20T20:26:43.120619Z">
+<testcase classname="Example Feature" name="Example scenario" time="0.015">
+<system-out><![CDATA[
+Given some starting condition...............................................passed
+When one or more actions are performed......................................passed
+Then some outcome should be achieved........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Example Feature" name="Example parameterized scenario - #1.1" time="0.005">
+<system-out><![CDATA[
+Given some starting condition...............................................passed
+* we use test data "first"..................................................passed
+* the data should actually be used..........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Example Feature" name="Example parameterized scenario - #1.2" time="0.0">
+<system-out><![CDATA[
+Given some starting condition...............................................passed
+* we use test data "second".................................................passed
+* the data should actually be used..........................................passed
+]]></system-out>
+</testcase>
+</testsuite>

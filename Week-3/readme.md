@@ -62,6 +62,7 @@ Week 3 materials (Mon 11/23 – Wed 11/25), organized by **subject → unit → 
 | Notes | [Branching](<Git/003 - Branching/001 - Branching/Notes/001 - Branching.md>) | Branches and the feature-branch workflow |
 | Notes | [Merging](<Git/003 - Branching/002 - Merging/Notes/001 - Merging.md>) | Fast-forwards and merge commits |
 | Notes | [Merge Conflicts](<Git/003 - Branching/003 - Merge Conflicts/Notes/001 - Merge Conflicts.md>) | Reading and resolving conflict markers |
+| Lab | [Merge Conflict Lab](<Git/003 - Branching/003 - Merge Conflicts/Labs/001 - Merge Conflict Lab/README.md>) | Force a conflict between two branches, resolve it, and commit while MERGING |
 | Notes | [Pull Requests](<Git/003 - Branching/004 - Pull Requests/Notes/001 - Pull Requests.md>) | Proposing, reviewing, and merging changes on GitHub |
 
 ---

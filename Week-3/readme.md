@@ -44,6 +44,7 @@ Week 3 materials (Mon 11/23 – Wed 11/25), organized by **subject → unit → 
 
 | Type | Material | Description |
 |---|---|---|
+| Review | [Reading Questions](<Git/001 - Intro to Git/Review/Reading Questions.md>) |  |
 | Notes | [What Git Is](<Git/001 - Intro to Git/001 - What Git Is/Notes/001 - What Git Is.md>) | Version control, commits, and the three areas |
 | Notes | [GitHub](<Git/001 - Intro to Git/002 - GitHub/Notes/001 - GitHub.md>) | Git vs. GitHub, and remotes |
 
@@ -51,6 +52,7 @@ Week 3 materials (Mon 11/23 – Wed 11/25), organized by **subject → unit → 
 
 | Type | Material | Description |
 |---|---|---|
+| Review | [Reading Questions](<Git/002 - Repositories/Review/Reading Questions.md>) |  |
 | Notes | [Creating a Repository](<Git/002 - Repositories/001 - Creating a Repository/Notes/001 - Creating a Repository.md>) | Init, the status–add–commit loop, and .gitignore |
 | Notes | [Cloning](<Git/002 - Repositories/002 - Cloning/Notes/001 - Cloning.md>) | Copying a remote repository |
 | Notes | [Pushing and Pulling](<Git/002 - Repositories/003 - Pushing and Pulling/Notes/001 - Pushing and Pulling.md>) | Sharing commits through the remote |
@@ -59,6 +61,7 @@ Week 3 materials (Mon 11/23 – Wed 11/25), organized by **subject → unit → 
 
 | Type | Material | Description |
 |---|---|---|
+| Review | [Reading Questions](<Git/003 - Branching/Review/Reading Questions.md>) |  |
 | Notes | [Branching](<Git/003 - Branching/001 - Branching/Notes/001 - Branching.md>) | Branches and the feature-branch workflow |
 | Notes | [Merging](<Git/003 - Branching/002 - Merging/Notes/001 - Merging.md>) | Fast-forwards and merge commits |
 | Notes | [Merge Conflicts](<Git/003 - Branching/003 - Merge Conflicts/Notes/001 - Merge Conflicts.md>) | Reading and resolving conflict markers |

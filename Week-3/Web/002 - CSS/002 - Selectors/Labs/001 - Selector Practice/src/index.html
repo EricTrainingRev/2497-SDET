@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HelpDesk — Open Tickets</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header id="site-header">
+    <a class="logo" href="/">HelpDesk</a>
+    <nav>
+      <ul class="menu">
+        <li><a href="/tickets" class="current">Tickets</a></li>
+        <li><a href="/reports">Reports</a></li>
+        <li><a href="/settings">Settings</a></li>
+        <li><a href="https://docs.example.com">Docs</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Open Tickets</h1>
+
+    <form id="search-form">
+      <label for="search">Search</label>
+      <input id="search" name="q" type="search" placeholder="Search tickets">
+
+      <label for="status">Status</label>
+      <select id="status" name="status">
+        <option value="all">All</option>
+        <option value="open" selected>Open</option>
+        <option value="closed">Closed</option>
+      </select>
+
+      <label><input type="checkbox" name="mine"> Assigned to me</label>
+
+      <button type="submit" data-testid="search-button">Search</button>
+      <button type="reset" class="secondary">Clear</button>
+    </form>
+
+    <p class="alert alert-warning" data-testid="sla-warning">2 tickets are past their due date.</p>
+
+    <table id="tickets">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Title</th>
+          <th>Priority</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr data-ticket-id="101" class="priority-high overdue">
+          <td>101</td>
+          <td>Login page times out</td>
+          <td>High</td>
+          <td>Open</td>
+          <td><button type="button" class="assign" data-testid="assign-101">Assign</button></td>
+        </tr>
+        <tr data-ticket-id="102" class="priority-low">
+          <td>102</td>
+          <td>Typo on pricing page</td>
+          <td>Low</td>
+          <td>Open</td>
+          <td><button type="button" class="assign" data-testid="assign-102">Assign</button></td>
+        </tr>
+        <tr data-ticket-id="103" class="priority-medium overdue">
+          <td>103</td>
+          <td>Export to CSV fails</td>
+          <td>Medium</td>
+          <td>Open</td>
+          <td><button type="button" class="assign" data-testid="assign-103">Assign</button></td>
+        </tr>
+        <tr data-ticket-id="104" class="priority-high">
+          <td>104</td>
+          <td>Password reset email not sent</td>
+          <td>High</td>
+          <td>In Progress</td>
+          <td><button type="button" class="assign" data-testid="assign-104" disabled>Assigned</button></td>
+        </tr>
+        <tr data-ticket-id="105" class="priority-low">
+          <td>105</td>
+          <td>Dark mode request</td>
+          <td>Low</td>
+          <td>Open</td>
+          <td><button type="button" class="assign" data-testid="assign-105">Assign</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </main>
+
+  <footer>
+    <a href="/privacy">Privacy</a>
+    <a href="/terms">Terms</a>
+    <a href="mailto:support@example.com">Contact</a>
+  </footer>
+</body>
+</html>

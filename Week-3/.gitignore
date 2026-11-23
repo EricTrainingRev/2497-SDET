@@ -1,0 +1,21 @@
+# ---- Instructor-only material ----
+
+# Answer keys, demo scripts and their files, lab solutions, and the
+# test mentality primer: every Instructor/ folder, at any depth
+Instructor/
+
+# Lab solutions kept outside an Instructor/ folder
+# (003 - Sales Report - Solution, 004 - SQL Assignment - Solution)
+* - Solution/
+
+# Trainer planning documents
+outline.md
+miniproject.md
+
+
+# ---- Editor and build output ----
+
+.vscode/
+.metals/
+.idea/
+target/

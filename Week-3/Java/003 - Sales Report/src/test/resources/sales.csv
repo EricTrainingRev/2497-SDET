@@ -1,0 +1,10 @@
+saleId,product,quantity,unitPrice,discountPercent
+1001,Widget,5,19.99
+1002,Gadget,2,49.50,10
+1003,Gizmo,4
+1004,Widget,five,19.99
+1005,Gadget,-2,49.50
+
+1006, Widget , 3 , 19.99
+1007,Doohickey,10,4.25,5
+1008,Gizmo,1,120.00

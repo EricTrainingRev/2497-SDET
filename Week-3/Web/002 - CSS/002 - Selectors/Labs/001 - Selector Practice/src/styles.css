@@ -1,0 +1,87 @@
+/* Selector Practice
+   Write one rule below each TODO: your selector, plus the style given.
+   Save, refresh the page (F5), and check the count in the DevTools Console:
+     $$('your selector').length
+*/
+
+
+/* ===== Part 1: Basic Selectors ===== */
+
+/* TODO 1: The page's main heading.
+   Expected matches: 1
+   Style: color: navy; */
+
+
+/* TODO 2: Every high-priority ticket row.
+   Expected matches: 2
+   Style: background-color: #ffe0e0; */
+
+
+/* TODO 3: The search box, by its id.
+   Expected matches: 1
+   Style: outline: 3px solid red; */
+
+
+/* TODO 4: The past-due warning message, by its test attribute.
+   Expected matches: 1
+   Style: background-color: gold; */
+
+
+/* TODO 5: The Clear button, by its type attribute.
+   Expected matches: 1
+   Style: outline: 3px solid red; */
+
+
+/* TODO 6: The link to the external docs site (its href starts with "https").
+   Expected matches: 1
+   Style: outline: 3px solid red; */
+
+
+/* TODO 7: Tickets that are high priority AND overdue.
+   Expected matches: 1
+   Style: font-weight: bold; */
+
+
+/* ===== Part 2: Combinators and Pseudo-classes ===== */
+
+/* TODO 8: The footer's links (and not the menu links).
+   Expected matches: 3
+   Style: color: green; */
+
+
+/* TODO 9: The Title cell of every ticket (the table's second column).
+   Expected matches: 5
+   Style: font-style: italic; */
+
+
+/* TODO 10: Every Assign button in the table that is not disabled.
+   Expected matches: 4
+   Style: background-color: lightgreen; */
+
+
+/* TODO 11: The last item in the menu.
+   Expected matches: 1
+   Style: outline: 3px solid red; */
+
+
+/* TODO 12: The "Assigned to me" checkbox, only while it's checked.
+   Expected matches: 0 until you tick the box, then 1
+   Style: outline: 3px solid red; */
+
+
+/* ===== Part 3: Durable Selectors ===== */
+
+/* TODO 13: This selector finds the Assign button for ticket 103, but it
+   breaks if a row or wrapper is added:
+     body > main > table > tbody > tr:nth-child(3) > td:nth-child(5) > button
+   Rewrite it so it depends only on the button itself.
+   Expected matches: 1
+   Style: outline: 3px solid blue; */
+
+
+/* TODO 14: This selector finds the row for ticket 104, but breaks if the
+   rows are sorted differently:
+     body > main > table > tbody > tr:nth-child(4)
+   Rewrite it so it depends only on the row itself.
+   Expected matches: 1
+   Style: background-color: lightblue; */
